@@ -1,11 +1,11 @@
 ## add user with openvpn permition
-python3 ldap_zu.py -a add -n zhangsan -g vpn 
+python3 ldap_tls.py -a add -n zhangsan -g vpn 
 
 ## del user
-python3 ldap_zu.py -add del -n zhangsan
+python3 ldap_tls.py -add del -n zhangsan
 
 ## add openvpn permition to user
-python3 ldap_zu.py -a mod -g vpn -ga add -n zhangsan
+python3 ldap_tls.py -a mod -g vpn -ga add -n zhangsan
 
 ## del the openvpn permition of user
-python3 ldap_zu.py -a mod -g vpn -ga del -n zhangsan
+python3 ldap_tls.py -a mod -g vpn -ga del -n zhangsan
