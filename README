@@ -1,12 +1,17 @@
-密码生成函数依赖 slappasswd ,ubuntu/debian 需要执行 apt install slapd。
+密码生成函数依赖 slappasswd ,ubuntu/debian 先执行 apt install slapd 安装。
 ## add user with openvpn permition
 python3 ldap_tls.py -a add -n zhangsan -g vpn 
 
+## add user 到 users ou,添加用户必须指定ou
+python3 ldap_tls.py -a add -n zhangsan -o users
+
 ## del user
-python3 ldap_tls.py -add del -n zhangsan
+python3 ldap_tls.py -a del -n zhangsan
 
 ## add openvpn permition to user
 python3 ldap_tls.py -a mod -g vpn -ga add -n zhangsan
 
 ## del the openvpn permition of user
 python3 ldap_tls.py -a mod -g vpn -ga del -n zhangsan
+
+生成后的账号密码存储在 user-pwd.txt文件内
